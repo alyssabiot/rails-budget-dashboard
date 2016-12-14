@@ -1,0 +1,16 @@
+<div class="form-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="form-container">
+          <h4>Add a new expense</h4>
+          <%= simple_form_for @expense do |f| %>
+            <%= f.input :category, collection: [ "Salary", "Transfer from savings", "Others" ] %>
+            <%= f.input :amount %>
+            <%= f.submit%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
