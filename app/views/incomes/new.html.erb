@@ -3,10 +3,11 @@
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4">
         <div class="form-container">
-          <h4>Add a new expense</h4>
+          <h4>Add a new income</h4>
           <%= simple_form_for @income do |f| %>
             <%= f.input :category, collection: [ "Salary", "Transfer from savings", "Others" ] %>
             <%= f.input :amount %>
+            <%= f.input :comment %>
             <%= f.submit%>
           <% end %>
         </div>

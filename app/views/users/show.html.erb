@@ -1,3 +1,9 @@
 <h1><%= current_user.email %></h1>
-<h3>Incomes : <%= @incomes %></h3>
-<h3>Expenses : <%= @expenses %></h3>
+<h3>Incomes</h3>
+<% @incomes.each do |income| %>
+  <p><%= income.date.strftime('%d/%m/%Y') %> : <%= income.amount %></p>
+<% end %>
+<h3>Expenses</h3>
+<% @expenses.each do |expense| %>
+  <p><%= expense.date.strftime('%d/%m/%Y') %> : <%= expense.amount %></p>
+<% end %>

@@ -7,7 +7,7 @@ class IncomesController < ApplicationController
     @income = Income.new(income_params)
     @income.user = current_user
     if @income.save
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -15,6 +15,6 @@ class IncomesController < ApplicationController
 
   private
   def income_params
-    params.require(:income).permit(:category, :amount)
+    params.require(:income).permit(:category, :amount, :comment, :date)
   end
 end
