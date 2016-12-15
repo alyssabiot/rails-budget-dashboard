@@ -9,7 +9,6 @@
             <%= f.input :category, collection: [ "Transports", "Subscriptions", "Phone", "Savings", "Income taxes", "Home taxes", "Rent", "Insurance", "Courses", "Restaurants & Drinks", "Groceries", "Shopping & Holidays", "Health", "Withdraws", "Gifts" ] %>
             <%= f.input :amount %>
             <%= f.input :date, as: :string, input_html: { class: "datepicker" } %>
-              </div>
             <%= f.input :comment %>
             <%= f.submit%>
           <% end %>

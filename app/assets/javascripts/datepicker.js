@@ -1,5 +1,5 @@
 $(function () {
   $('input.datepicker').datepicker({
-    language: 'fr',
+    format: 'dd/mm/yyyy',
   });
 });
