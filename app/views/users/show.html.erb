@@ -35,7 +35,7 @@
     <% end %>
   </table>
 
-  <%= pie_chart Expense.group(:category).count %>
+  <%= pie_chart @expenses.group(:category).count %>
 
 
 </div>
