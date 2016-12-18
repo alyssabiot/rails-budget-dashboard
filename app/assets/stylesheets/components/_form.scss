@@ -10,9 +10,26 @@
   background-color: white;
   padding: 5px 20px 20px 20px;
   box-shadow: 3px 3px 2px #DFDDDE;
-  position: relative;
 }
 
+.category {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.category p {
+  margin: 0;
+  font-size: 12px;
+}
 
+.category .fa {
+  font-size: 22px;
+  color: #da552f;
+}
 
+.selected-border {
+  border: 2px solid #da552f;
+}
