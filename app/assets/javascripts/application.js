@@ -2,6 +2,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
-//= require Chart.bundle
+//= require highcharts
 //= require chartkick
 //= require_tree .
