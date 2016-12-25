@@ -13,6 +13,11 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def destroy
+    @expense = Expense.find(params[:id])
+    @expense.destroy
+  end
+
   private
   def expense_params
     params.require(:expense).permit(:expense_type, :category, :amount, :comment, :date)

@@ -1,41 +1,47 @@
-<div class="container operations">
-  <h3>Incomes</h3>
-  <table>
-    <tr>
-      <th>Date</th>
-      <th>Amount</th>
-      <th>Category</th>
-      <th>Comment</th>
-    </tr>
-    <% @incomes.each do |income| %>
-      <tr>
-        <td><%= income.date.strftime('%d/%m/%Y') %></td>
-        <td><%= income.amount %></td>
-        <td><%= income.category %></td>
-        <td><%= income.comment ? income.comment : "" %></td>
-    </tr>
-    <% end %>
-  </table>
-
-  <h3>Expenses</h3>
-  <table>
-    <tr>
-      <th>Date</th>
-      <th>Amount</th>
-      <th>Category</th>
-      <th>Comment</th>
-    </tr>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.date.strftime('%d/%m/%Y') %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.category %></td>
-        <td><%= expense.comment ? expense.comment : "" %></td>
-    </tr>
-    <% end %>
-  </table>
-
-  <%= pie_chart @expenses.group(:category).count %>
-
-
+<div class="wrapper">
+  <div class="container">
+    <div class="operations">
+      <h4>Incomes</h4>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Comment</th>
+        </tr>
+        <% @incomes.each do |income| %>
+          <tr>
+            <td><%= income.date.strftime('%d/%m/%Y') %></td>
+            <td><%= income.amount %></td>
+            <td><%= income.category %></td>
+            <td><%= income.comment ? income.comment : "" %></td>
+            <td><%= link_to "Delete", income_path(income), method: :delete %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="container">
+    <div class="operations">
+      <h4>Expenses</h4>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Comment</th>
+        </tr>
+        <% @expenses.each do |expense| %>
+          <tr>
+            <td><%= expense.date.strftime('%d/%m/%Y') %></td>
+            <td><%= expense.amount %></td>
+            <td><%= expense.category %></td>
+            <td><%= expense.comment ? expense.comment : "" %></td>
+            <td><%= link_to "Delete", expense_path(expense), method: :delete %></td>
+        </tr>
+        <% end %>
+      </table>
+      <%#= pie_chart @expenses.group(:category).count %>
+    </div>
+  </div>
 </div>
