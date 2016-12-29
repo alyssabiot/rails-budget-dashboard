@@ -15,7 +15,9 @@
             <td><%= income.amount %></td>
             <td><%= income.category %></td>
             <td><%= income.comment ? income.comment : "" %></td>
-            <td><%= link_to "Delete", income_path(income), method: :delete %></td>
+            <td class="no-line">
+              <%= link_to "", edit_income_path(income), class: "fa fa-pencil" %>
+              <%= link_to "", income_path(income), method: :delete, data: { confirm: "Are you sure?"}, class: "fa fa-trash" %></td>
         </tr>
         <% end %>
       </table>
@@ -37,7 +39,9 @@
             <td><%= expense.amount %></td>
             <td><%= expense.category %></td>
             <td><%= expense.comment ? expense.comment : "" %></td>
-            <td><%= link_to "Delete", expense_path(expense), method: :delete %></td>
+            <td class="no-line">
+              <%= link_to "", edit_expense_path(expense), class: "fa fa-pencil" %>
+              <%= link_to "", expense_path(expense), method: :delete, data: { confirm: "Are you sure?"}, class: "fa fa-trash" %></td>
         </tr>
         <% end %>
       </table>
